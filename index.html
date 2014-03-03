@@ -5,62 +5,70 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.0.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Address book</title>
+    <title>Address Book</title> 
   </head>
   <body>
     
     <div class="container">
-      <h1>Address book</h1>
+      <div id ="phonePic">
+      <h1>Address Book</h1>
+      </div>
       
-      <div class="row">
+          <h2 id="add">Add a contact:</h2>
+
+          <form id="new-contact" class="contactnew">
+          <div class="row">
         <div class="col-md-7">
-          <h2>Add a contact:</h2>
-          <form id="new-contact">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="First Name" id="new-first-name">
+            <fieldset>
+              <input type="text" class="form-control" placeholder="First Name" id="new-first-name" required />
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Last Name" id="new-last-name">
+              <input type="text" class="form-control" placeholder="Last Name" id="new-last-name" required />
+            </fieldset>
+
             </div>
-          </div>
-        </div>
-      <h4>Phone Number</h4>
+            </div>
+            </div>
+          
+        
+      <h3 id="number">Phone Number</h3>
       <div class="row">
         <div class="col-md-7">
           <div id="new-phone-numbers">
             <div class="new-phone">
               <div class="col-xs-3">
                 <div class="form-group">
-                  <input type="text" class="form-control new-area-code" placeholder="Area Code">
+                  <input type="text" class="form-control new-area-code" placeholder="Area Code" required pattern="(\d{3})" />
                 </div>
               </div>
               <div class="col-xs-4">  
                 <div class="form-group">
-                  <input type="text" class="form-control new-first-three" placeholder="First Three Digits">
+                  <input type="text" class="form-control new-first-three" placeholder="First Three Digits" required pattern="(\d{3})" />
                 </div>
               </div>
               <div class="col-xs-5">
                 <div class="form-group">
-                  <input type="text" class="form-control new-last-four" placeholder="Last Four Digits">
+                  <input type="text" class="form-control new-last-four" placeholder="Last Four Digits" required pattern="(\d{4})" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <h4>Address</h4>
+      <h3 id="address">Address</h3>
       <div class="row">
         <div class="col-md-7">
           <div id="new-addresses">
             <div class="new-address">
               <div class="form-group">
-                <input type="text" class="form-control new-street" placeholder="Street">
+                <input type="text" class="form-control new-street" placeholder="Street" required  />
               </div>
               <div class="form-group">
-                <input type="text" class="form-control new-city" placeholder="City">
+                <input type="text" class="form-control new-city" placeholder="City" required  />
               </div>
               <div class="form-group">
-                <select class="form-control new-state">
+                <select class="form-control new-state" required />
                   <option value="">Select State</option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
@@ -122,10 +130,10 @@
       <span class="btn btn-primary" id="add-address">Another address</span>
       <span class="btn btn-info" id="add-phone">Another phone</span>
 
-      <button type="submit" class="btn">Add</button>
+      <button type="submit" class="btn btn-success">Add &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</button>
     </form>
 
-      <h2>Contacts:</h2>
+      <h2 id="contacts">Contacts:</h2>
       <ul id="contacts">
 
       </ul>

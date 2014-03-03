@@ -1,3 +1,7 @@
+body {
+  background-image: url('background.jpg');
+}
+
 .col-xs-3 {
   padding-left: 0;
 }
@@ -9,3 +13,60 @@
 #show-contact {
   display:none;
 }
+
+#phonePic {
+  background-image: url("phone.png");
+  width: 820px;
+  height: 220px;
+  background-repeat: no-repeat;
+  padding: 60px;
+
+}
+
+h1 {
+  font-size: 120px;
+  font-family: "Brush Script MT", cursive !important;
+}
+
+h2, h3, h4 {
+  font-family: "Brush Script MT", cursive !important;
+}
+p {
+  font-weight: bold;
+}
+
+#add {
+  margin-top: 12px;
+}
+
+#number {
+  margin-top: 9px;
+}
+
+#address {
+  margin-top: 11px;
+}
+
+#contacts {
+  margin-top: 15px;
+}
+form.contactnew input:required:valid, #new-contact textarea:required:valid { /* when a field is considered valid by the browser */
+    background: #fff url(check.png) no-repeat 98% center;
+    box-shadow: 0 0 5px #5cd053;
+    border-color: #28921f;
+}
+form.contactnew input:focus:invalid, #new-contact textarea:focus:invalid { /* when a field is considered invalid by the browser */
+    background: #fff url(Alert.png) no-repeat 98% center;
+    box-shadow: 0 0 5px #d45252;
+    border-color: #b03535
+}
+form.new-phone input:required:valid, .new-phone textarea:required:valid { /* when a field is considered valid by the browser */
+    background: #fff url(check.png) no-repeat 98% center;
+    box-shadow: 0 0 5px #5cd053;
+    border-color: #28921f;
+}
+form.new-phone input:focus:invalid, .new-phone textarea:focus:invalid { /* when a field is considered invalid by the browser */
+    background: #fff url(Alert.png) no-repeat 98% center;
+    box-shadow: 0 0 5px #d45252;
+    border-color: #b03535
+    }

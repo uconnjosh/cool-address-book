@@ -22,11 +22,23 @@ var Contact = {
   createPhone: function(inputtedAreaCode, inputtedFirstThree, inputtedLastFour) {
     var phone = Phone.create(inputtedAreaCode, inputtedFirstThree, inputtedLastFour);
     this.phones.push(phone);
-  } ,   
+  },   
 
   fullName: function() {
     return this.firstName + " " + this.lastName;
-  }
+  },
+
+  valid: function(inputtedStreet, inputtedCity, inputtedState, inputtedAreaCode, inputtedFirstThree, inputtedLastFour) {
+    var validPhone = Phone.valid(inputtedAreaCode, inputtedFirstThree, inputtedLastFour);
+    var validAddress = Address.valid(inputtedStreet, inputtedCity, inputtedState);
+    if (validPhone && validAddress) {
+      alert('This is a valid address!');
+      return true;
+      } else {
+        return false;
+      }
+    }
+  
 };
 
 var Address = {
@@ -74,7 +86,7 @@ var Phone = {
   },
 
   valid: function() {
-    if (((this.areaCode.length === 3) && (this.firstThreeNumbers.length === 3) && (this.lastFourNumbers.length === 4)) || ((this.areaCode.length === 0) && (this.firstThreeNumbers.length === 0) && (this.lastFourNumbers.length === 0))) {
+    if (((thi.length === 3) && (this.firstThreeNumbers.length === 3) && (this.lastFourNumbers.length === 4)) || ((this.areaCode.length === 0) && (this.firstThreeNumbers.length === 0) && (this.lastFourNumbers.length === 0))) {
       if ((this.areaCode % 1 !== 0) || (this.firstThreeNumbers % 1 !== 0) || (this.lastFourNumbers % 1 !== 0)) {
         return false;
       } 
@@ -198,7 +210,6 @@ $(document).ready(function() {
 
     var allPhonesValid // = loop through all phones with every or check phones as entered.
 
-    if (newPhone.valid() && newAddress.valid()) {
       $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
 
       $(".contact").last().click(function() {
@@ -220,17 +231,9 @@ $(document).ready(function() {
         });
       });
       this.reset();
-    } else {
-        if (!newPhone.valid()) {
-          alert("Please Enter a Valid Number."); 
-          $(".new-area-code").val("");
-          $(".new-first-three").val("");
-          $(".new-last-four").val("");
-      } else {
-          alert("Please Enter a Valid City");
-          $(".new-city").val("");
-      }
-    }
+
+    
+    
   });
 });
 
